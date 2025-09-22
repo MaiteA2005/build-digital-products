@@ -1,13 +1,14 @@
 const express = require('express')
+const logger = require("./middleware/logger")
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Maite Aldenkamp')
-})
+app.get('/', (req, res) => {res.send('Maite Aldenkamp')});
 
 //GET api/v1/todos
-app.get('/api/v1/todos', (req, res) => {res.send("GET todos");});
+app.get('/api/v1/todos', logger, (req, res) => {
+    res.send("GET todos");
+});
 
 //POST api/v1/todos
 app.post('/api/v1/todos', (req, res) => {res.send("PORT todos");});
