@@ -3,7 +3,7 @@ const logger = require("./middleware/logger")
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {res.send('Maite Aldenkamp')});
+app.get('/', (req, res) => {res.send('Maite Aldenkamp!')});
 
 //GET api/v1/todos
 app.get('/api/v1/todos', logger, (req, res) => {
